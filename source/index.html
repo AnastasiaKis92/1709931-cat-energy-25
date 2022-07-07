@@ -7,6 +7,7 @@
     <link rel="preload" href="fonts/oswaldregular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
     <link rel="preload" href="fonts/oswaldmedium.woff2" as="font" type="font/woff2" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.min.css">
+    <link rel="stylesheet" href="nouislider/nouislider.css">
     <link rel="icon" href="favicon.ico">
     <link rel="icon" href="img/favicons/favicon.svg" type="image/svg+xml">
     <link rel="apple-touch-icon" href="img/favicons/apple.png">
@@ -125,35 +126,15 @@
           </div>
 
           <div class="example__cat">
-            <div class="example__cat-before">
-              <picture>
-                <source media="(min-width: 768px)" type="image/webp" srcset="img/index-before-tablet.webp 1x, img/index-before-tablet@2x.webp 2x">
-                <source type="image/webp" srcset="img/index-before-mobile.webp 1x, img/index-before-mobile@2x.webp 2x">
-                <source media="(min-width: 768px)" srcset="img/index-before-tablet.png 1x, img/index-before-tablet@2x.png 2x">
-                <img class="example__image example__image--before" src="img/index-before-mobile.png" srcset="img/index-before-mobile@2x.png 2x" alt="Фото кота до.">
-              </picture>
-            </div>
-
-            <div class="example__cat-after">
-              <picture>
-                <source media="(min-width: 768px)" type="image/webp" srcset="img/index-after-tablet.webp 1x, img/index-after-tablet@2x.webp 2x">
-                <source type="image/webp" srcset="img/index-after-mobile.webp 1x, img/index-after-mobile@2x.webp 2x">
-                <source media="(min-width: 728px)" srcset="img/index-after-tablet.png 1x, img/index-after-tablet@2x.png 2x">
-                <img class="example__image example__image--after" src="img/index-after-mobile.png" srcset="img/index-after-mobile@2x.png 2x" alt="Фото кота после.">
-              </picture>
-            </div>
+            <div class="example__cat-before"></div>
+            <div class="example__cat-after"></div>
           </div>
 
           <div class="example__range range">
-            <button class="range__button" type="button">Было</button>
-            <div class="range__scale">
-              <div class="range__bar">
-                <button class="range__toggle" type="button">
-                  <span class="visually-hidden">Сравнить</span>
-                </button>
-              </div>
-            </div>
-            <button class="range__button" type="button">Стало</button>
+            <button class="range__button range__button--before" type="button">Было</button>
+            <div class="range__scale"></div>
+            <input type="range" class="range__input visually-hidden">
+            <button class="range__button range__button--after" type="button">Стало</button>
           </div>
         </div>
       </section>
@@ -220,6 +201,7 @@
       </div>
     </footer>
 
-    <script src="js/script.js"></script>
+    <script src="nouislider/nouislider.js"></script>
+    <script src="js/main.js" type="module"></script>
   </body>
 </html>

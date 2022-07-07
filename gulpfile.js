@@ -86,13 +86,14 @@ const sprite = () => {
     .pipe(gulp.dest('build/img'));
 }
 
-// Copy
+// Copy fonts, ico, webmanifest
 
 const copy = (done) => {
   gulp.src([
     'source/fonts/*{woff2,woff}',
     'source/*.ico',
     'source/*.webmanifest',
+    'source/nouislider/**',
   ], {
     base: 'source'
   })
@@ -116,6 +117,7 @@ const server = (done) => {
     cors: true,
     notify: false,
     ui: false,
+    online: true
   });
   done();
 }
@@ -149,7 +151,10 @@ export const build = gulp.series(
     sprite,
     createWebp
   ),
-);
+  gulp.series(
+    server,
+    watcher
+  ));
 
 // Default
 

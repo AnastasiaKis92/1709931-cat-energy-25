@@ -148,6 +148,7 @@
   background-repeat: no-repeat;
   background-position: center right 16px;
   appearance: textfield;
+  border-radius: 0%;
 
   &--info,
   &--contacts {
@@ -168,12 +169,12 @@
 
   &:focus {
     border-color: @gray-4;
-    outline: 1px solid @gray-4;
+    outline: none;
   }
 
   &:focus:invalid {
     border-color: @error;
-    outline: 1px solid @error;
+    outline: none;
   }
 }
 
@@ -219,10 +220,16 @@
   .font(0.8rem, calc(18 / 16));
   text-transform: uppercase;
   border: 1px solid @border-color;
+  border-radius: 0;
   resize: none;
 
   &::placeholder {
     color: @gray-4;
+  }
+
+  &:focus {
+    border-color: @gray-4;
+    outline: none;
   }
 }
 

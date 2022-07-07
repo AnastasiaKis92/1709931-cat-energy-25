@@ -3,6 +3,41 @@
   justify-content: center;
   align-items: center;
   padding-top: 4px;
+  z-index: 1;
+
+  // Стилизация noUISlider
+  & .noUi-target {
+    height: 14px;
+    background-color: @white;
+    border-radius: 6px;
+    border: 1px solid @border-block-catalog2-color;
+    box-shadow: none;
+  }
+
+  // Стилизация ползунка
+  & .noUi-handle::before,
+  & .noUi-handle::after {
+    display: none;
+  }
+
+  & .noUi-horizontal .noUi-handle {
+    top: calc(14px / 5);
+    width: 35px;
+    height: 6px;
+    cursor: pointer;
+    border-radius: 6px;
+    background-color: @green;
+    box-shadow: none;
+    border: none;
+  }
+
+  & .noUi-horizontal .noUi-handle-lower {
+    right: 6px;
+  }
+
+  .noUi-origin {
+    width: calc(100% - 46px);
+  }
 }
 
 .range__button {
@@ -19,30 +54,57 @@
 .range__scale {
   position: relative;
   width: 31%;
-  height: 14px;
   margin: 0 13px;
-  background-color: @white;
-  border: 1px solid @border-block-catalog2-color;
-  border-radius: 6px;
-}
-
-.range__toggle {
-  position: absolute;
-  top: 50%;
-  left: 4px;
-  transform: translateY(-50%);
-  width: 35px;
-  height: 6px;
-  padding: 0;
-  background-color: @green;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
 }
 
 @media (min-width: @tablet-width) {
   .range {
     padding: 31px 0 0 4px;
+
+    // Стилизация noUISlider
+    & .noUi-target {
+      height: 6px;
+      background-color: @range-color;
+      border-radius: 6px;
+      border: none;
+      box-shadow: none;
+    }
+
+    // Стилизация ползунка
+    & .noUi-horizontal .noUi-handle {
+      top: -14px;
+      width: 34px;
+      height: 34px;
+      background-color: @white;
+      border-radius: 50%;
+      border: 1px solid @border-block-catalog2-color;
+      box-shadow: none;
+
+      &::after {
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 8px;
+        height: 8px;
+        background-color: @green;
+        border-radius: 50%;
+        content: "";
+      }
+
+      &:active {
+        border: 1px solid @green;
+      }
+    }
+
+    & .noUi-horizontal .noUi-handle-lower {
+      right: -14px;
+    }
+
+    .noUi-origin {
+      width: 100%;
+    }
   }
 
   .range__button {
@@ -60,37 +122,7 @@
 
   .range__scale {
     width: 60%;
-    height: 6px;
     margin: 0 26px;
-    background-color: @range-color;
-    border: none;
-  }
-
-  .range__toggle {
-    top: 0;
-    left: 50%;
-    transform: translate(-50%, -42%);
-    width: 34px;
-    height: 34px;
-    background-color: @white;
-    border-radius: 50%;
-    border: 1px solid @border-block-catalog2-color;
-
-    &:active {
-      border: 1px solid @green;
-    }
-
-    &::after {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 8px;
-      height: 8px;
-      background-color: @green;
-      border-radius: 50%;
-      content: "";
-    }
   }
 }
 

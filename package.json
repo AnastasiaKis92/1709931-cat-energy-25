@@ -5,8 +5,10 @@
   "devDependencies": {
     "@htmlacademy/editorconfig-cli": "1.0.0",
     "autoprefixer": "^10.4.0",
-    "browser-sync": "2.27.7",
+    "browser-sync": "^2.27.7",
     "del": "^6.0.0",
+    "eslint": "8.18.0",
+    "eslint-config-htmlacademy": "^5.1.2",
     "gulp": "^4.0.2",
     "gulp-htmlmin": "^5.0.1",
     "gulp-less": "5.0.0",
@@ -17,6 +19,7 @@
     "gulp-svgmin": "^4.1.0",
     "gulp-svgstore": "^9.0.0",
     "gulp-terser": "^2.1.0",
+    "nouislider": "^15.6.0",
     "postcss": "^8.3.11",
     "postcss-csso": "^6.0.0",
     "stylelint": "13.13.1",
@@ -25,6 +28,7 @@
   "scripts": {
     "editorconfig": "editorconfig-cli",
     "stylelint": "stylelint \"source/less/**/*.less\" --syntax less",
+    "eslint": "eslint source/js/",
     "lint": "npm run editorconfig && npm run stylelint",
     "build": "gulp build",
     "start": "gulp"

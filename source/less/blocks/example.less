@@ -65,15 +65,46 @@
   color: @black;
 }
 
-.example__image {
+.example__cat {
+  position: relative;
   display: block;
-  margin: 0 auto 15px;
   width: 280px;
   height: 232px;
+  margin: 0 auto 15px;
+}
 
-  &--after {
-    display: none;
-  }
+.example__cat-before {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  background-image: image-set(
+    url("../img/index-before-mobile@2x.webp") 2x,
+    url("../img/index-before-mobile.webp") 1x,
+    url("../img/index-before-mobile.png") 1x,
+    url("../img/index-before-mobile@2x.png") 2x
+  );
+  background-repeat: no-repeat;
+  background-position-x: 10px;
+}
+
+.example__cat-after {
+  position: absolute;
+  bottom: 0;
+  left: auto;
+  right: 0;
+  width: 50%;
+  height: 100%;
+  background-image: image-set(
+    url("../img/index-after-mobile@2x.webp") 2x,
+    url("../img/index-after-mobile.webp") 1x,
+    url("../img/index-after-mobile.png") 1x,
+    url("../img/index-after-mobile@2x.png") 2x
+  );
+  background-repeat: no-repeat;
+  background-position-x: 67px;
+  transform: scaleX(-1);
 }
 
 @media (min-width: @tablet-width) {
@@ -130,34 +161,28 @@
   .example__cat {
     display: flex;
     justify-content: center;
-    position: relative;
+    width: 592px;
     min-height: 511px;
-    transform: translateX(31px);
+    margin: 0 auto;
   }
 
   .example__cat-before {
-    position: absolute;
-    top: 0;
-    clip: rect(auto, 269px, auto, auto);
+    background-image: image-set(
+      url("../img/index-before-tablet@2x.webp") 2x,
+      url("../img/index-before-tablet.webp") 1x,
+      url("../img/index-before-tablet.png") 1x,
+      url("../img/index-before-tablet@2x.png") 2x
+    );
   }
 
   .example__cat-after {
-    position: absolute;
-    top: 0;
-    clip: rect(auto, auto, auto, 269px);
-  }
-
-  .example__image {
-    width: 592px;
-    height: 511px;
-
-    &--before {
-      height: 499px;
-    }
-
-    &--after {
-      display: block;
-    }
+    background-image: image-set(
+      url("../img/index-after-tablet@2x.webp") 2x,
+      url("../img/index-after-tablet.webp") 1x,
+      url("../img/index-after-tablet.png") 1x,
+      url("../img/index-after-tablet@2x.png") 2x
+    );
+    background-position-x: 129px;
   }
 }
 
